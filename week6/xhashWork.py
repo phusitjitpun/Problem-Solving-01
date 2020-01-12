@@ -11,12 +11,12 @@ def getlist(keys,val,num):
                 listname[count] = Data
                 break
     return listname
-def nathash(Keys):
-    numindex = hash(Keys)%10
-    if numindex >= 10 :
-        numindex = numindex % 10
-    print(numindex)
-    return numindex
+def xhash(Keys):
+    index = hash(Keys)%10
+    if index >= 10 :
+        index = index % 10
+    print(index)
+    return index
 listname = ["","","","","","","","","",""]
 yes = "Y"
 while yes.upper() == "Y":
@@ -32,14 +32,14 @@ while yes.upper() == "Y":
                 yes1 ="N"
             keys = input("Enter your name :")
             val = input("Student ID :")
-            num = nathash(keys)
+            num = xhash(keys)
             getlist(keys,val,num)
             yes1 = input("Do you want to input again? (Y or N): ")
     elif enter == '2':
         yes2= "Y"
         while yes2.upper() == 'Y':
             keys = input('Enter your name :')
-            num = nathash(keys)
+            num = xhash(keys)
             if keys in listname[num]:
                 print("This is Student ID:",listname[num].get(keys))
             else:
