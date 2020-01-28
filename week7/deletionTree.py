@@ -62,18 +62,29 @@ class Node:
             res.append(root.data)
         return res
 
-root = Node(60)
-root.insert(65)
-root.insert(75)
-root.insert(32)
-root.insert(47)
-root.insert(53)
-root.insert(81)
-root.insert(51)
-root.insert(73)
+    def deleion(self, deletion):
+        res = []
+        res.append(root.data)
+        if deletion < self.data:
+            if self.left is None:
+                return deletion.pop()
+            return self.left.deleion(deletion)   
+        elif deletion > self.data:
+            if self.right is None:
+                return deletion.pop()
+            return self.right.deleion(deletion)
+        else:
+            print(str(self.data)+ ' is Deletion')
+
+root = Node(100)
+root.insert(50)
+root.insert(150)
+root.insert(20)
+root.insert(60)
 
 root.PrintTree()
-root.findval(51)
+root.findval(60)
+print(root.deleion(50))
 print(root.inorderTraversal(root))
 print(root.PreorderTraversal(root))
 print(root.PostorderTraversal(root))
