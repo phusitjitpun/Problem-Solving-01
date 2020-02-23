@@ -6,7 +6,7 @@ sumb = 0
 sumc = 0
 
 for i in ListB:
-    suma = sum(ListA)
+    suma.append(sum(ListA))
     x = ord(i)
     sumb += x
     sumc = suma + sumb
@@ -16,4 +16,3 @@ print('Result Sum ListA: ', suma)
 print('Result Sum ListB: ', sumb)
 print('Resulr Sum ListC: ', sumc)
 print('Result ListC: ', ListC)
-print(type(ListA))
